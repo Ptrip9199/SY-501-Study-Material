@@ -1,6 +1,6 @@
 # Chapter 1:
 
-<br><br>
+
 ## CIA Triad:
 1. **Confidentiality** : Prevents unauthorized disclosure of data.
    1.  Encryption -> scrambling data to make it unreadable.
@@ -11,9 +11,7 @@
    2. Digital Signatures, Certificates, and Non-Repudiation -> covers integrity using message hash as well as source of identity as only I can use my digital signature to sign a doc and no one else. 
 3. **Availability** : Ensure that data and services to access the data are available all the time. 
    1. Redundancy and Fault Tolerance -> add duplication and remove each SPOF(single point of failure).
-   2. Patching -> ensuring that the software of the system is always the lastet to ensure that there are no software related issues in the systems. 
-
-Resource vs Security Constraint leads to development of Risk Management, i.e. companies need to balance the right amount of security risks in order to not exceed the security budget. 
+   2. Patching -> ensuring that the software of the system is always the lastet to ensure that there are no software related issues in the systems.  
 
 
 **Risk** : possibility/likelihood of a threat being exploited leading to losses to the company. 
@@ -23,3 +21,4 @@ Resource vs Security Constraint leads to development of Risk Management, i.e. co
 **Vulnerability** : a weakness in either the system, software or configuration. 
 
 **Security Incident** : When a *Threat* exploits a *Vulnerability*, it leads to a security incident.
+
