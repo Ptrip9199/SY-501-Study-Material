@@ -19,7 +19,7 @@
    3. *Tokens/Key Fobs* : Hardware wallets synced to a server which keep changing value every 60 seconds or so. [example](https://www.google.com/search?q=secure+ID+image&ei=rjxrYNemN8e1rQHvuIrwDQ&oq=secure+ID+image&gs_lcp=Cgdnd3Mtd2l6EAMyAggAMgoIABAHEAUQChAeOgUIABCwAzoLCAAQsAMQCBAKEB5QzidY5ShguS5oAXAAeACAAbcBiAHPA5IBAzAuM5gBAKABAaoBB2d3cy13aXrIAQLAAQE&sclient=gws-wiz&ved=0ahUKEwjXtc_1xOfvAhXHWisKHW-cAt4Q4dUDCA0&uact=5) 
    4.  *HOTP* : open standard for creating OTPs. Uses HMAC with an incrementing counter to create 6-8 digit OTP. 
    5.  *TOTP* : Time based OTP which user timestamp instead of counter like in case of HOTP. 
-3. **Something you are** -> fingerprint or other biometrics
+3. **Something you are** -> Biometrics. 
    1. *Fingerprint scanner*
    2. *Retina scanner*
    3. *Iris scanner*
@@ -27,6 +27,14 @@
    5. *Facial recognition*
 4. **Somewhere you are** -> geolocaltion technologies
 5. **Something you do**  -> patterns in phones
+
+
+In biometrics, there always exists some errors and failures. These can be clubbed into:
+* False Acceptance(FAR)
+* False Rejection(FRR)
+Biometric systems allow you to set the FAR and FRR by adjusting the sensitivity. 
+A CER(Crossover error rate) can be obtained by plotting the FAR and FRR and CER is at the point where the two interact. The lower the value of CER, more effective the system is.
+
 
 **Methods of authentication when using the same factor DO NOT qualify as MFA. Its considered MFA iff multiple authentication methods are used.**
 
