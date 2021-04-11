@@ -64,4 +64,38 @@ SSO leads to transitive trust. i.e. since Google has already verified me, Twitte
 
 **SAML and Authorization** -> SSO does not generally provide authorization, however, many SSO systems do provide this functionality. 
 
+**SSO and Federation** -> A federation requires a federated identity management system that all members of the federation use. A federated identity links a user’s credentials from different networks or operating systems, but the federation treats it as one identity. *[Shibboleth](https://en.wikipedia.org/wiki/Shibboleth_Single_Sign-on_architecture)*
 
+**OAuth and OpenID Connect** -> OAuth is an open standard for authorization many companies use to provide secure access to protected resources. This enables users to use a single account at multiple different places. OpenID Connect works with OAuth 2.0 and it allows clients to verify the identity of end users without managing their credentials. This saves companies the hassle of storing passwords and verifying users.
+
+## Managing Accounts
+
+**Least Privilege** : Only the required permissions are given to a user, no more no less.  
+**Need to know** : All new employees should be granted access to information they need to know to do their job. 
+**Types of Accounts** 
+   1. End User Accounts : Regular accounts with appropriate roles based on their responsibilities. 
+   2. Privileged Accounts : A privileged account has additional rights and privileges beyond what a regular user hag
+   3. Guest Accounts : Temporary accounts for outside agency, contracters etc. 
+   4. Service Accounts : Similar to regular accounts, but generally used by applications or services. 
+
+It is recommended for *administrators to have two accounts*, a regular one and an admin account. This enables them to do regular day to day work with regular privileges preventing issues where an attacker can gain direct access to the administrator account.
+
+**Prohibiting shared and generic accounts** -> Shared accounts make it difficult to implement access controls and identification. 
+
+## Comparing Access Control Models
+
+**Subjects** are typically users or groups that access an object. Occasionally, the subject may be a service that is using a service account to access an object.  
+**Objects** are items such as files, folders, shares, and printers that subjects access. For example, users access files and printers. The access control helps determine how a system grants authorization to objects.
+
+The following are the Access Control methods for providing access to objects for each subjet.
+* **Role-based access control (role-BAC)** -> Roles manage rights and permissions. Generally useful in places where there are multiple departments each having multiple people requring the same specific set of permissions. Role-BACs can either be heirarchy based or Job/function based.  
+* **Rule-based access control (rule-BAC)** -> Rules manage access. Example, ACLs and Firewalls. 
+* **Discretionary access control (DAC)** -> Here every object has an owner and the owner decides who can and cant access the required files. 
+* **Mandatory access control (MAC)** -> Uses labels to determine access to a file. Iff a label on a resource matches the user label, access to the resource is granted. Generally used in military organisations. It uses a Labels and Lattice model to define security access. The access is also based on need to know basis, i.e. a person with top-secret clearance in 'X' does not have access to all top-secret info in 'Y'.
+* **Attribute-based access control (ABAC)** -> Evaluates attributes and grants access based on the value of these attributes. Attributes can be almost any characteristic of a user, the environment, or the resource. Generally has:
+  * *Subject* i.e. the user.
+  * *Object* i.e the resource.
+  * *Action* being performed by the user
+  * *Environment* i.e everything outside the subject and object attributes. 
+
+ABAC can be used to enfore both DAC and MAC. 
